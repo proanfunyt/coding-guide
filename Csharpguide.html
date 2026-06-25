@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proanfun | JavaScript Guide Page 2</title>
+    <title>Proanfun | C# Coding Guide</title>
 
 
-    <!-- Google tag (gtag.js) -->
+     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-244R309EFL"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -17,7 +17,6 @@
 </script>
 
 
-    
     <style>
         :root {
             --bg-color: #0f172a;
@@ -79,17 +78,12 @@
             padding-bottom: 8px;
         }
 
-        h3 {
-            color: #f8fafc;
-            margin-top: 20px;
-        }
-
         p {
             color: var(--text-muted);
             font-size: 1.1rem;
         }
 
-        ul, ol {
+        ul {
             color: var(--text-muted);
             padding-left: 20px;
             font-size: 1.1rem;
@@ -120,14 +114,6 @@
             color: #38bdf8;
             background-color: transparent;
             padding: 0;
-        }
-
-        .important-note {
-            background-color: rgba(56, 189, 248, 0.1);
-            border-left: 4px solid var(--accent-color);
-            padding: 15px;
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
-            margin: 20px 0;
         }
 
         .nav-buttons {
@@ -172,7 +158,6 @@
             padding-top: 20px;
             border-top: 1px solid var(--card-bg);
             color: var(--text-muted);
-            font-style: normal;
         }
     </style>
 </head>
@@ -182,23 +167,84 @@
         
         <header>
             <h1>Proanfun</h1>
-            <p class="subtitle">Guide: How to Code in JavaScript</p>
+            <p class="subtitle">C# Coding Guide</p>
         </header>
 
         <main>
             <section>
-              <p>my friend named <code>Noah</code> is a git who loves porn and goons every night</p>
+                <h2>Variables and Data Types</h2>
+                <p>Variables are containers used to store data values. C# is a strongly-typed language, meaning you must declare the data type explicitly.</p>
+                <pre><code>int userAge = 21;
+string userName = "Alice";
+double totalScore = 95.5;
+bool isCoding = true;</code></pre>
+                <p>Key highlights:</p>
+                <ul>
+                    <li><code>int</code> stores whole numbers (integers).</li>
+                    <li><code>string</code> stores text values inside double quotes.</li>
+                    <li><code>double</code> holds decimal precision values.</li>
+                    <li><code>bool</code> stores conditional flags: true or false.</li>
+                </ul>
             </section>
 
+            <section>
+                <h2>Conditional Logic</h2>
+                <p>Use decision-making statements like <code>if</code>, <code>else if</code>, and <code>else</code> to execute different paths of code.</p>
+                <pre><code>int score = 85;
+
+if (score >= 90) {
+    Console.WriteLine("Grade: A");
+} else if (score >= 80) {
+    Console.WriteLine("Grade: B");
+} else {
+    Console.WriteLine("Grade: C");
+}</code></pre>
+                <p>Key highlights:</p>
+                <ul>
+                    <li>The code inside braces runs only if the condition evaluates to true.</li>
+                    <li><code>Console.WriteLine()</code> outputs strings directly onto the screen terminal.</li>
+                </ul>
+            </section>
 
             <section>
-              <p>it is also <code>Blake</code> he has never been my friend</p>
-              <p>anyway he <code>Goons</code> and watches <code>Porn</code> aswell</p>
+                <h2>Loops (For Loops)</h2>
+                <p>Loops allow you to execute a specific block of code repeatedly over a set range or collection.</p>
+                <pre><code>for (int i = 0; i < 5; i++) {
+    Console.WriteLine("Iteration number: " + i);
+}</code></pre>
+                <p>Key highlights:</p>
+                <ul>
+                    <li><code>int i = 0</code> sets up the counter initialization.</li>
+                    <li><code>i < 5</code> defines the boundary conditional statement loop criteria.</li>
+                    <li><code>i++</code> increments your loop counter by exactly one on every lap.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Methods (Functions)</h2>
+                <p>Methods isolate reusable code pieces. They can receive arguments and return calculated results.</p>
+                <pre><code>public int AddNumbers(int num1, int num2) {
+    return num1 + num2;
+}
+
+// How to call it:
+int result = AddNumbers(5, 10);</code></pre>
+                <p>Key highlights:</p>
+                <ul>
+                    <li><code>public</code> allows outside scopes to discover the function structure safely.</li>
+                    <li>The first type declaration (<code>int</code>) dictates the return outcome type.</li>
+                    <li><code>return</code> stops calculations and transmits value directly out.</li>
+                </ul>
             </section>
         </main>
 
+        <div class="nav-buttons">
+            <a href="index.html" class="btn outline">← Return to Homepage 🏠</a>
+            <a href="continue.html" class="btn">Go to Page 2 →</a>
+        </div>
+
         <footer>
-            <address>Owned & Maintained by Proanfun</address>
+            <p>&copy; 2026 Proanfun. Built with clean CSS layout strategies.</p>
         </footer>
     </div>
 
