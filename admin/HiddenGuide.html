@@ -111,9 +111,93 @@
             color: var(--text-muted);
             font-size: 0.95rem;
         }
+
+        /* --- Password gate --- */
+        #gate-screen {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #gate-box {
+            background-color: var(--card-bg);
+            padding: 35px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            max-width: 360px;
+            width: 100%;
+            text-align: center;
+        }
+
+        #gate-box h1 {
+            font-size: 1.5rem;
+            margin: 0 0 8px;
+        }
+
+        #gate-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 0 0 20px;
+        }
+
+        #gate-input {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: var(--border-radius);
+            border: 1px solid #334155;
+            background-color: #0f172a;
+            color: var(--text-color);
+            font-size: 1rem;
+            margin-bottom: 14px;
+            box-sizing: border-box;
+        }
+
+        #gate-input:focus {
+            outline: 2px solid var(--accent-color);
+        }
+
+        #gate-button {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: var(--border-radius);
+            border: none;
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        #gate-button:hover {
+            background-color: var(--accent-hover);
+        }
+
+        #gate-error {
+            color: #f87171;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            min-height: 1.2em;
+        }
+
+        #real-content {
+            display: none;
+        }
     </style>
 </head>
 <body>
+    <div id="gate-screen">
+        <div id="gate-box">
+            <h1>🔒 Locked</h1>
+            <p>Enter the password to view this page.</p>
+            <input type="password" id="gate-input" placeholder="Password" autocomplete="off">
+            <button id="gate-button">Unlock</button>
+            <p id="gate-error"></p>
+        </div>
+    </div>
+
+    <div id="real-content">
     <div class="container">
         <header>
             <h1>Hidden Guide</h1>
@@ -440,5 +524,48 @@ print("Hello")
             <p>Owned &amp; Maintained by Antonio Biffarini</p>
         </footer>
     </div>
+    </div>
+
+    <script>
+        // Simple client-side gate. NOTE: this is NOT real security —
+        // the password and the protected content both live in this
+        // file's source, so anyone who views source or opens dev tools
+        // can read them. This only stops casual link-clicking, not a
+        // determined visitor.
+        (function () {
+            var PASSWORD = "Proanfunisthebest2020"; // <-- change this to your own password
+            var gateScreen = document.getElementById("gate-screen");
+            var realContent = document.getElementById("real-content");
+            var input = document.getElementById("gate-input");
+            var button = document.getElementById("gate-button");
+            var error = document.getElementById("gate-error");
+
+            function unlock() {
+                gateScreen.style.display = "none";
+                realContent.style.display = "block";
+                sessionStorage.setItem("hiddenGuideUnlocked", "true");
+            }
+
+            function tryPassword() {
+                if (input.value === PASSWORD) {
+                    unlock();
+                } else {
+                    error.textContent = "Incorrect password.";
+                    input.value = "";
+                    input.focus();
+                }
+            }
+
+            // Stay unlocked for the rest of this browser tab session
+            if (sessionStorage.getItem("hiddenGuideUnlocked") === "true") {
+                unlock();
+            }
+
+            button.addEventListener("click", tryPassword);
+            input.addEventListener("keydown", function (e) {
+                if (e.key === "Enter") tryPassword();
+            });
+        })();
+    </script>
 </body>
 </html>
