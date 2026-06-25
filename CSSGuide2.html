@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonio Biffarini | Advanced CSS Topics</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --code-bg: #0f172a;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--card-bg);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--text-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #f8fafc;
+            margin-top: 20px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        ul, ol {
+            color: var(--text-muted);
+            padding-left: 20px;
+            font-size: 1.1rem;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        code {
+            background-color: var(--code-bg);
+            color: #f472b6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border: 1px solid #334155;
+            overflow-x: auto;
+        }
+
+        pre code {
+            color: #38bdf8;
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .important-note {
+            background-color: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 20px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            background-color: var(--accent-color);
+            color: #0f172a !important;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            text-decoration: none;
+        }
+
+        .btn.outline {
+            background-color: transparent;
+            color: var(--accent-color) !important;
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn.outline:hover {
+            background-color: var(--accent-color);
+            color: #0f172a !important;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--card-bg);
+            color: var(--text-muted);
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Antonio Biffarini</h1>
+            <p class="subtitle">Advanced CSS Topics</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Responsive Design</h2>
+                <p>Responsive design helps your website look great on phones, tablets, and desktops. Use media queries to change styles based on screen width.</p>
+                <pre><code>@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+    }
+}</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>@media</code> checks the screen size or device features.</li>
+                    <li>Styles inside the block only apply when the condition is true.</li>
+                    <li>This makes layouts flexible and easier to use on small phones.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>CSS Transitions</h2>
+                <p>Transitions animate property changes smoothly when a user interacts with an element.</p>
+                <pre><code>.btn {
+    background-color: #38bdf8;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #7dd3fc;
+    transform: translateY(-2px);
+}</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>transition</code> defines which properties animate and how long they take.</li>
+                    <li>Property changes happen smoothly instead of instantly.</li>
+                    <li>This improves the user experience by making interactions feel polished.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>CSS Animations</h2>
+                <p>Animations let you move and change elements over time. They are defined using <code>@keyframes</code>.</p>
+                <pre><code>@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: float 4s ease-in-out infinite;
+}</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>@keyframes</code> defines the animation steps.</li>
+                    <li><code>animation</code> applies it to an element.</li>
+                    <li><code>infinite</code> makes it repeat forever.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Transformations</h2>
+                <p>Transforms rotate, scale, or move elements without changing the document layout.</p>
+                <pre><code>.card:hover {
+    transform: scale(1.02) rotate(-1deg);
+}
+
+.icon {
+    transform: translateX(10px);
+}</code></pre>
+                <p>Common transform functions:</p>
+                <ul>
+                    <li><code>translate()</code> moves an element horizontally or vertically.</li>
+                    <li><code>scale()</code> changes the size.</li>
+                    <li><code>rotate()</code> turns the element around a point.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Pseudo-Classes and Pseudo-Elements</h2>
+                <p>Pseudo-classes and pseudo-elements target special states or parts of elements without adding extra HTML.</p>
+                <pre><code>a:hover {
+    color: #7dd3fc;
+}
+
+button:focus {
+    outline: 2px solid #38bdf8;
+}
+
+button::after {
+    content: " →";
+}</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>:hover</code> applies styles when the mouse is over an element.</li>
+                    <li><code>:focus</code> styles an element when it is selected by keyboard or click.</li>
+                    <li><code>::after</code> inserts content after an element.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>CSS Variables</h2>
+                <p>CSS variables store reusable values for colors, spacing, and more.</p>
+                <pre><code>:root {
+    --main-bg: #0f172a;
+    --main-color: #f8fafc;
+    --accent: #38bdf8;
+}
+
+body {
+    background-color: var(--main-bg);
+    color: var(--main-color);
+}
+
+.button {
+    background-color: var(--accent);
+}</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>--name</code> defines a variable.</li>
+                    <li><code>var(--name)</code> uses it.</li>
+                    <li>Variables make themes and color changes easier across the whole page.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Why Advanced CSS Matters</h2>
+                <p>Advanced CSS helps your website feel modern and polished. It improves usability, makes layouts flexible, and adds motion that guides the user.</p>
+                <ul>
+                    <li>Responsive design ensures content works on every screen.</li>
+                    <li>Transitions and animations make interactions feel smooth.</li>
+                    <li>Transforms add subtle movement and emphasis.</li>
+                    <li>Pseudo-classes keep code clean while controlling states.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Next Steps</h2>
+                <p>Try building a responsive card component with a hover animation. Practice using media queries and CSS variables to make the design adapt to different screens.</p>
+            </section>
+
+            <div class="nav-buttons">
+                <a href="CSSGuide1.html" class="btn outline">← Back to CSS Guide 1</a>
+                <a href="CSSGuide3.html" class="btn">Go to CSS Guide 3 →</a>
+            </div>
+        </main>
+
+        <footer>
+            <address>Owned & Maintained by Antonio Biffarini</address>
+        </footer>
+
+    </div>
+
+</body>
+</html>

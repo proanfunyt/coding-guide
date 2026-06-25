@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonio Biffarini | CSS Guide Page 3</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --code-bg: #0f172a;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--card-bg);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--text-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #f8fafc;
+            margin-top: 20px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        ul, ol {
+            color: var(--text-muted);
+            padding-left: 20px;
+            font-size: 1.1rem;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        code {
+            background-color: var(--code-bg);
+            color: #f472b6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border: 1px solid #334155;
+            overflow-x: auto;
+        }
+
+        pre code {
+            color: #38bdf8;
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .important-note {
+            background-color: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 20px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            background-color: var(--accent-color);
+            color: #0f172a !important;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            text-decoration: none;
+        }
+
+        .btn.outline {
+            background-color: transparent;
+            color: var(--accent-color) !important;
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn.outline:hover {
+            background-color: var(--accent-color);
+            color: #0f172a !important;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--card-bg);
+            color: var(--text-muted);
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Antonio Biffarini</h1>
+            <p class="subtitle">CSS Guide Page 3</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>CSS Grid Layout</h2>
+                <p>CSS Grid gives you powerful control over two-dimensional layouts. Use rows and columns to place content in a grid.</p>
+                <pre><code>.grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+.header {
+    grid-column: 1 / -1;
+}</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>display: grid</code> makes the parent a grid container.</li>
+                    <li><code>grid-template-columns</code> defines the number and size of columns.</li>
+                    <li><code>grid-column: 1 / -1</code> makes the element span the full width of the grid.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Advanced Selectors</h2>
+                <p>Advanced selectors help you target elements with precision, even without extra classes or IDs.</p>
+                <pre><code>article > p {
+    margin-bottom: 16px;
+}
+
+nav a:first-child {
+    font-weight: bold;
+}
+
+button:not(.primary) {
+    opacity: 0.8;
+}</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>&gt;</code> targets direct children only.</li>
+                    <li><code>:first-child</code> selects the first matching item inside a parent.</li>
+                    <li><code>:not()</code> selects elements that do not match a selector.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Functions and Calculations</h2>
+                <p>CSS offers functions like <code>calc()</code>, <code>min()</code>, <code>max()</code>, and <code>clamp()</code> to build flexible, responsive values.</p>
+                <pre><code>.card {
+    width: calc(100% - 40px);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.section {
+    gap: min(2rem, 5vw);
+}</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>calc()</code> performs math with lengths and percentages.</li>
+                    <li><code>clamp()</code> sets a value with a minimum, preferred, and maximum size.</li>
+                    <li><code>min()</code> and <code>max()</code> choose the smallest or largest value.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Custom Properties in Depth</h2>
+                <p>Custom properties let you create theme variables that can be reused and updated across your stylesheet.</p>
+                <pre><code>:root {
+    --main-bg: #0f172a;
+    --surface: #1e293b;
+    --accent: #38bdf8;
+    --radius: 12px;
+}
+
+.card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    --accent: #7dd3fc;
+    border-color: var(--accent);
+}</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li>Custom properties can be declared globally or on specific elements.</li>
+                    <li>They can also change inside hover or media queries for dynamic theming.</li>
+                    <li>Use <code>var(--name, fallback)</code> to provide a fallback value.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Layering and Z-Index</h2>
+                <p>Control which elements appear on top using stacking order and positioning.</p>
+                <pre><code>.modal {
+    position: fixed;
+    z-index: 50;
+}
+
+.overlay {
+    position: fixed;
+    z-index: 40;
+}</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>position</code> creates a stacking context for z-index.</li>
+                    <li>A larger <code>z-index</code> value places the element above smaller values.</li>
+                    <li>Use <code>position: relative</code> to create local stacking contexts for nested elements.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Accessibility and Focus Styles</h2>
+                <p>Good CSS supports keyboard users by making interactive elements visible when focused.</p>
+                <pre><code>button:focus-visible {
+    outline: 3px solid #38bdf8;
+    outline-offset: 4px;
+}
+
+a:focus-visible {
+    text-decoration: underline;
+}</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>:focus-visible</code> applies styles only when an element is focused by keyboard or assistive tools.</li>
+                    <li>Clear focus styles help users know where they are on the page.</li>
+                    <li>Accessible design is essential for real-world websites.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Why CSS Guide 3 Matters</h2>
+                <p>This page teaches the deeper tools that make your layouts more powerful, responsive, and easier to maintain.</p>
+                <ul>
+                    <li>Grid handles complex page structures cleanly.</li>
+                    <li>Advanced selectors keep your HTML minimal.</li>
+                    <li>Functions and variables make responsive design easier.</li>
+                    <li>Accessibility keeps your site usable for everyone.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Next Steps</h2>
+                <p>Try building a responsive dashboard using CSS Grid, custom properties, and focus styles. Add a hover animation and make sure the design still works on mobile screens.</p>
+            </section>
+
+            <div class="nav-buttons">
+                <a href="CSSGuide2.html" class="btn outline">← Back to CSS Guide 2</a>
+                <a href="index.html" class="btn">Return to Homepage 🏠 →</a>
+            </div>
+        </main>
+
+        <footer>
+            <address>Owned & Maintained by Antonio Biffarini</address>
+        </footer>
+
+    </div>
+
+</body>
+</html>

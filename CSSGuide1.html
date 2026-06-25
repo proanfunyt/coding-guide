@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonio Biffarini | Learn CSS Styling</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --code-bg: #0f172a;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--card-bg);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--text-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #f8fafc;
+            margin-top: 20px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        ul, ol {
+            color: var(--text-muted);
+            padding-left: 20px;
+            font-size: 1.1rem;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        code {
+            background-color: var(--code-bg);
+            color: #f472b6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border: 1px solid #334155;
+            overflow-x: auto;
+        }
+
+        pre code {
+            color: #38bdf8;
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .important-note {
+            background-color: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 20px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            background-color: var(--accent-color);
+            color: #0f172a !important;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            text-decoration: none;
+        }
+
+        .btn.outline {
+            background-color: transparent;
+            color: var(--accent-color) !important;
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn.outline:hover {
+            background-color: var(--accent-color);
+            color: #0f172a !important;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--card-bg);
+            color: var(--text-muted);
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Antonio Biffarini</h1>
+            <p class="subtitle">Guide: How to Code in CSS</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>What is CSS?</h2>
+                <p>CSS stands for <strong>Cascading Style Sheets</strong>. It controls how HTML elements look on the page by defining colors, fonts, spacing, layout, and more. While HTML creates the structure, CSS makes it beautiful and readable.</p>
+                <p>CSS is applied to HTML using selectors that choose which elements to style, then properties that define the visual rules.</p>
+            </section>
+
+            <section>
+                <h2>CSS Syntax</h2>
+                <p>Every CSS rule has a selector, a property, and a value. Together they tell the browser what to style and how.</p>
+                <pre><code>h1 {
+    color: #38bdf8;
+    font-size: 2rem;
+    margin-top: 0;
+}</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>h1</code> is the selector that targets heading elements.</li>
+                    <li><code>color</code> is the property.</li>
+                    <li><code>#38bdf8</code> is the value that sets the heading color.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Common Selectors</h2>
+                <p>Selectors tell CSS which elements to style. Here are the most useful ones:</p>
+                <ul>
+                    <li><code>element</code> selects all tags of that type, like <code>p</code> or <code>div</code>.</li>
+                    <li><code>.class</code> selects elements with a specific class attribute.</li>
+                    <li><code>#id</code> selects one unique element with an id.</li>
+                    <li><code>element.class</code> combines tag and class for more precise selection.</li>
+                </ul>
+                <pre><code>.button {
+    background-color: #38bdf8;
+}
+
+#main-title {
+    font-size: 3rem;
+}
+
+p.lead {
+    color: #94a3b8;
+}</code></pre>
+            </section>
+
+            <section>
+                <h2>The Box Model</h2>
+                <p>Every HTML element is a rectangular box. The CSS box model controls the element's size and spacing using four layers.</p>
+                <pre><code>box-sizing: border-box;
+padding: 20px;
+border: 2px solid #334155;
+margin: 20px;</code></pre>
+                <p>The four layers are:</p>
+                <ul>
+                    <li><strong>Content</strong>: The actual text or image inside the element.</li>
+                    <li><strong>Padding</strong>: Space between the content and the border.</li>
+                    <li><strong>Border</strong>: The line around the element.</li>
+                    <li><strong>Margin</strong>: Space outside the border that separates elements.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Typography, Colors, and Backgrounds</h2>
+                <p>CSS makes text readable and gives your page personality. Use fonts, colors, and backgrounds to create a polished design.</p>
+                <pre><code>body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+}
+
+h2 {
+    color: #38bdf8;
+}
+
+section {
+    background: #1e293b;
+    border-radius: 8px;
+}</code></pre>
+                <p>Use CSS to control:</p>
+                <ul>
+                    <li><code>font-family</code> for text style.</li>
+                    <li><code>color</code> for text color.</li>
+                    <li><code>background-color</code> for element backgrounds.</li>
+                    <li><code>border-radius</code> to round corners.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Layout Basics</h2>
+                <p>Layout is how elements are arranged on the page. These CSS properties are essential for modern layouts:</p>
+                <pre><code>.container {
+    display: flex;
+    gap: 20px;
+}
+
+.box {
+    flex: 1;
+    padding: 20px;
+}
+
+.header {
+    display: grid;
+    place-items: center;
+}</code></pre>
+                <p>Key layout tools:</p>
+                <ul>
+                    <li><code>display</code>: Changes how an element behaves, such as <code>block</code>, <code>inline</code>, <code>flex</code>, or <code>grid</code>.</li>
+                    <li><code>flex</code>: Creates flexible row or column layouts.</li>
+                    <li><code>grid</code>: Builds precise two-dimensional layouts.</li>
+                    <li><code>gap</code>: Adds space between flex or grid items.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Why CSS Matters</h2>
+                <p>CSS turns plain HTML into a visually appealing experience. It helps your website:</p>
+                <ul>
+                    <li>look professional and polished,</li>
+                    <li>create readable layouts for users,</li>
+                    <li>stay consistent across pages,</li>
+                    <li>adapt to different screen sizes with responsive design.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Next Steps</h2>
+                <p>Practice by styling a simple webpage. Try these challenges:</p>
+                <ul>
+                    <li>Create a card with a colored background, padding, and rounded corners.</li>
+                    <li>Use a class selector to style several buttons the same way.</li>
+                    <li>Build a simple flex layout with two or three boxes side by side.</li>
+                </ul>
+                <p>After that, explore responsive design with media queries and CSS transitions for smooth animations.</p>
+            </section>
+
+            <div class="nav-buttons">
+                <a href="index.html" class="btn outline">← Back to Home</a>
+                <a href="CSSGuide2.html" class="btn">Go to CSS Guide 2 →</a>
+            </div>
+        </main>
+
+        <footer>
+            <address>Owned & Maintained by Antonio Biffarini</address>
+        </footer>
+
+    </div>
+
+</body>
+</html>
