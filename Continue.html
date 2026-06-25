@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continue Prompt</title>
+    <style>
+        /* 1. Global Reset & Body Background */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start; /* Aligns the prompt layout to the left */
+            padding: 40px;
+            background-color: #fafafa; /* Modern, soft off-white background */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 2. Heading Typography Styles */
+        .prompt-text {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+            margin-bottom: 24px; /* Space between text and the buttons */
+        }
+
+        /* 3. The Layout Container for Buttons */
+        .button-group {
+            display: flex;
+            gap: 12px; /* Perfect, clean spacing between side-by-side buttons */
+        }
+
+        /* 4. Base Button Layout (Shared Rules) */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: -0.2px;
+            line-height: 1;
+            text-decoration: none;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* 5. "Yes" Button (Primary Theme) */
+        .btn-primary {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+        }
+
+        .btn-primary:hover {
+            background-color: #2e2e2e;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.06);
+        }
+
+        .btn-primary:active {
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 6. "No" Button (Secondary Subdued Theme) */
+        .btn-secondary {
+            background-color: #ffffff;
+            color: #4a5568;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+        }
+
+        .btn-secondary:hover {
+            background-color: #f7fafc;
+            color: #1a202c;
+            border-color: #cbd5e0;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary:active {
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Prompt Question -->
+    <h1 class="prompt-text">Do you want to continue to my html guide?</h1>
+
+    <!-- Action Buttons Side-by-Side -->
+    <div class="button-group">
+        <a href="pg1.html" class="btn btn-primary">Yes</a>
+        <a href="index.html" class="btn btn-secondary">No</a>
+    </div>
+
+</body>
+</html>

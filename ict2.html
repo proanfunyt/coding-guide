@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonio Biffarini | Portfolio</title>
+    <style>
+        /* Modern CSS Variables for easy styling */
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--card-bg);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--text-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+            text-transform: capitalize;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .pc-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .pc-image {
+            border-radius: var(--border-radius);
+            object-fit: cover;
+            border: 2px solid var(--accent-color);
+        }
+
+        .pc-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        ol {
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            text-transform: capitalize;
+        }
+
+        /* Modernized Navigation Buttons */
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            background-color: var(--accent-color);
+            color: #0f172a !important;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            text-decoration: none;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--card-bg);
+            color: var(--text-muted);
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Antonio Biffarini</h1>
+            <p class="subtitle">Welcome to my personal website</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>My Hobbies</h2>
+                <p>My hobbies include learning to code and developing video games.</p>
+            </section>
+
+            <section>
+                <h2>Personality</h2>
+                <div class="pc-section">
+                    <img>
+                    <div class="pc-links">
+                        <p style="margin: 0;">I am a kind person who loves gaming and building PCs.</p>
+                        <a href="https://www.cyberpowersystem.co.uk/category/prebuilt-pcs/" target="_blank">→ View Prebuilt PCs</a>
+                        <a href="https://uk.pcpartpicker.com/" target="_blank">→ Pick Parts & Build Your PC</a>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>My Favourite Subjects</h2>
+                <ol>
+                    <li>ICT</li>
+                    <li>Science</li>
+                    <li>Maths</li>
+                </ol>
+            </section>
+
+            <div class="nav-buttons">
+                <a href="index.html" class="btn">Return to Homepage 🏠</a>
+            </div>
+        </main>
+
+        <footer>
+            <address>Owned & Maintained by Antonio Biffarini</address>
+        </footer>
+
+    </div>
+
+</body>
+</html>

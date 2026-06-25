@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonio Biffarini | Python Guide Page 3</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --code-bg: #0f172a;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--card-bg);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--text-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #f8fafc;
+            margin-top: 20px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        ul, ol {
+            color: var(--text-muted);
+            padding-left: 20px;
+            font-size: 1.1rem;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        code {
+            background-color: var(--code-bg);
+            color: #f472b6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border: 1px solid #334155;
+            overflow-x: auto;
+        }
+
+        pre code {
+            color: #38bdf8;
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .important-note {
+            background-color: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 20px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            background-color: var(--accent-color);
+            color: #0f172a !important;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            text-decoration: none;
+        }
+
+        .btn.outline {
+            background-color: transparent;
+            color: var(--accent-color) !important;
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn.outline:hover {
+            background-color: var(--accent-color);
+            color: #0f172a !important;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--card-bg);
+            color: var(--text-muted);
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Antonio Biffarini</h1>
+            <p class="subtitle">Guide: How to Code in Python</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Functions with Return Values</h2>
+                <p>Functions can send a value back to the part of your program that called them. This is useful when you want the result of a calculation or a transformed value.</p>
+                <pre><code>def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(result)  # 8</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>return</code> sends a value back to the caller.</li>
+                    <li>The function stops running after it reaches <code>return</code>.</li>
+                    <li><code>result</code> receives the value produced by <code>add(5, 3)</code>.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>File Input / Output</h2>
+                <p>File I/O lets Python read and save information from files on your computer. This is how you keep data after the program stops.</p>
+                <pre><code>with open("notes.txt", "w") as file:
+    file.write("Hello from Python!\n")
+
+with open("notes.txt", "r") as file:
+    content = file.read()
+    print(content)</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>open("notes.txt", "w")</code> opens a file for writing, creating or replacing it.</li>
+                    <li><code>with</code> ensures the file is closed automatically when you are done.</li>
+                    <li><code>file.write()</code> sends text into the file.</li>
+                    <li><code>open("notes.txt", "r")</code> opens the same file for reading.</li>
+                    <li><code>file.read()</code> gets the file contents as one string.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Error Handling</h2>
+                <p>Error handling helps your program stay running even when something goes wrong, like bad input or a missing file.</p>
+                <pre><code>try:
+    age_text = input("Enter your age: ")
+    age = int(age_text)
+    print("Next year you will be", age + 1)
+except ValueError:
+    print("Please type a valid number.")
+finally:
+    print("Program finished.")</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>try</code> runs code that might cause an error.</li>
+                    <li><code>except</code> runs only if that error happens.</li>
+                    <li><code>ValueError</code> is a common error when a conversion like <code>int()</code> fails.</li>
+                    <li><code>finally</code> always runs, even if there was an error.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Why These Topics Matter</h2>
+                <p>Return values, file I/O, and error handling are important because they let your programs do more useful work:</p>
+                <ul>
+                    <li>Functions with returns allow your code to calculate results and use them later.</li>
+                    <li>File I/O saves and loads data so your program can remember things between runs.</li>
+                    <li>Error handling makes your program safer and easier to use by preventing crashes.</li>
+                </ul>
+            </section>
+
+            <div class="nav-buttons">
+                <a href="Pythonguide2.html" class="btn outline">← Back to Page 2</a>
+                <a href="index.html" class="btn">Return to Homepage 🏠 →</a>
+            </div>
+        </main>
+
+        <footer>
+            <address>Owned & Maintained by Antonio Biffarini</address>
+        </footer>
+
+    </div>
+
+</body>
+</html>

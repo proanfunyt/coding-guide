@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonio Biffarini | Python Guide Page 2</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --code-bg: #0f172a;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--card-bg);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--text-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #f8fafc;
+            margin-top: 20px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        ul, ol {
+            color: var(--text-muted);
+            padding-left: 20px;
+            font-size: 1.1rem;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        code {
+            background-color: var(--code-bg);
+            color: #f472b6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border: 1px solid #334155;
+            overflow-x: auto;
+        }
+
+        pre code {
+            color: #38bdf8;
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .important-note {
+            background-color: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 20px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            background-color: var(--accent-color);
+            color: #0f172a !important;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            text-decoration: none;
+        }
+
+        .btn.outline {
+            background-color: transparent;
+            color: var(--accent-color) !important;
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn.outline:hover {
+            background-color: var(--accent-color);
+            color: #0f172a !important;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--card-bg);
+            color: var(--text-muted);
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Antonio Biffarini</h1>
+            <p class="subtitle">Guide: How to Code in Python</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Python Functions</h2>
+                <p>Functions help you organize Python code into reusable pieces. Instead of writing the same instructions more than once, you define a function once and call it whenever you need it.</p>
+                <pre><code>def greet(name):
+    message = "Hello, " + name + "!"
+    print(message)
+
+# Run the function with a specific name
+greet("Antonio")</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>def</code> starts the function definition.</li>
+                    <li><code>greet</code> is the function name.</li>
+                    <li><code>(name)</code> is the parameter: a placeholder for the input you give the function.</li>
+                    <li>Indented lines inside the function are the actions Python performs when the function runs.</li>
+                </ul>
+                <p>Calling <code>greet("Antonio")</code> sends the value <code>"Antonio"</code> into the function, so the code inside can use it.</p>
+            </section>
+
+            <section>
+                <h2>Working with Lists</h2>
+                <p>Lists store multiple values in one variable. Each item in a list keeps its order, and you can use an index to access them.</p>
+                <pre><code>fruits = ["apple", "banana", "cherry"]
+print(fruits[0])  # apple
+
+# Add a new item to the list
+fruits.append("orange")
+
+# Loop over each item in the list
+for fruit in fruits:
+    print(fruit)</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>["apple", "banana", "cherry"]</code> creates a list with three items.</li>
+                    <li><code>fruits[0]</code> gets the first item, because Python starts counting at zero.</li>
+                    <li><code>append()</code> adds a new value to the end of the list.</li>
+                    <li><code>for fruit in fruits:</code> repeats the same action for every item in the list.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Dictionaries</h2>
+                <p>Dictionaries let you store information using named keys instead of numeric positions. This makes data easier to read and use.</p>
+                <pre><code>person = {
+    "name": "Antonio",
+    "age": 20,
+    "language": "Python"
+}
+print(person["name"])
+
+# Change a value
+person["age"] = 21
+print(person["age"])
+
+# Loop through keys and values
+for key, value in person.items():
+    print(key + ":", value)</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>{"name": "Antonio", "age": 20}</code> creates a dictionary.</li>
+                    <li>Each <strong>key</strong> (like <code>"name"</code>) points to a <strong>value</strong> (like <code>"Antonio"</code>).</li>
+                    <li><code>person["name"]</code> looks up the value for the key <code>"name"</code>.</li>
+                    <li><code>person.items()</code> returns all key/value pairs so you can loop over them.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Useful Python Built-Ins</h2>
+                <p>Built-in functions are ready to use without importing anything. They help you do common tasks quickly.</p>
+                <ul>
+                    <li><code>len(value)</code>: Returns how many items are in a string, list, tuple, or dictionary.</li>
+                    <li><code>type(value)</code>: Tells you the data type of a value.</li>
+                    <li><code>input(prompt)</code>: Shows a message, waits for keyboard input, and returns the typed text.</li>
+                    <li><code>str(), int(), float()</code>: Convert values to text, whole numbers, or decimal numbers.</li>
+                </ul>
+                <pre><code>name = input("What is your name? ")
+print("Nice to meet you, " + name)
+print("Your name has", len(name), "letters.")
+
+age_text = input("How old are you? ")
+age = int(age_text)
+print("Next year you will be", age + 1)</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>input()</code> pauses the program and waits for the user to type something.</li>
+                    <li><code>len(name)</code> counts characters in the typed name.</li>
+                    <li><code>int(age_text)</code> converts the text input into a number so you can add to it.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Python Modules</h2>
+                <p>Modules are collections of code that Python or other people already wrote. By importing a module, you can use its tools instead of writing them yourself.</p>
+                <pre><code>import math
+print(math.sqrt(25))  # 5.0
+print(math.pi)        # 3.141592653589793
+
+import random
+colors = ["red", "blue", "green"]
+print(random.choice(colors))</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>import math</code> makes the <code>math</code> module available.</li>
+                    <li><code>math.sqrt(25)</code> calls the <code>sqrt</code> function from that module.</li>
+                    <li><code>random.choice(colors)</code> picks a random item from the list.</li>
+                    <li>Modules group useful tools so your code stays smaller and easier to read.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Why This Matters</h2>
+                <p>Understanding functions, lists, dictionaries, built-ins, and modules is the foundation of writing useful Python programs. These tools let you:</p>
+                <ul>
+                    <li>Break code into reusable pieces with functions so it is easier to understand and maintain.</li>
+                    <li>Store and process groups of values with lists and dictionaries to handle real-world data.</li>
+                    <li>Interact with users and convert data types using built-in functions.</li>
+                    <li>Reuse powerful existing code by importing modules instead of building everything from scratch.</li>
+                </ul>
+                <p>Once you master these concepts, you can build small programs, solve problems faster, and move on to more advanced Python topics with confidence.</p>
+            </section>
+
+            <section>
+                <h2>Next Steps</h2>
+                <p>Try practicing with a few simple projects to make these ideas stick. For example:</p>
+                <ul>
+                    <li>Write a program that asks for a name and age, then greets the user and calculates their age next year.</li>
+                    <li>Create a list of your favorite foods and print each item with a sentence.</li>
+                    <li>Build a dictionary to store a friend's contact details and print the values in a friendly format.</li>
+                </ul>
+                <p>After that, move on to learning <strong>functions with return values</strong>, <strong>file input/output</strong>, and <strong>error handling</strong>.</p>
+            </section>
+
+            <div class="nav-buttons">
+                <a href="index.html" class="btn outline">← Return to Homepage 🏠</a>
+                <a href="PythonGuide3.html" class="btn">Go to Page 3 →</a>
+            </div>
+        </main>
+
+        <footer>
+            <address>Owned & Maintained by Antonio Biffarini</address>
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonio Biffarini | Learn HTML Coding</title>
+    <style>
+        /* Consistent theme variables */
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --code-bg: #0f172a;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--card-bg);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--text-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #f8fafc;
+            margin-top: 20px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        ul, ol {
+            color: var(--text-muted);
+            padding-left: 20px;
+            font-size: 1.1rem;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Styling for code snippets */
+        code {
+            background-color: var(--code-bg);
+            color: #f472b6; /* Pink color for inline code */
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border: 1px solid #334155;
+            overflow-x: auto;
+        }
+
+        pre code {
+            color: #38bdf8; /* Cyan color for block code */
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .important-note {
+            background-color: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 20px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            background-color: var(--accent-color);
+            color: #0f172a !important;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            text-decoration: none;
+        }
+
+        .btn.outline {
+            background-color: transparent;
+            color: var(--accent-color) !important;
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn.outline:hover {
+            background-color: var(--accent-color);
+            color: #0f172a !important;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--card-bg);
+            color: var(--text-muted);
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Antonio Biffarini</h1>
+            <p class="subtitle">Guide: How to Code in HTML</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Introduction to HTML</h2>
+                <p>Welcome to my guide on coding with HTML! <strong>HTML</strong> stands for <em>HyperText Markup Language</em>. It is the absolute backbone of the internet. Every single website you visit—from YouTube to Google—uses HTML to structure its content. Think of HTML as the skeleton of a building; it provides the structure, while CSS provides the paint and decorations.</p>
+                
+                <p>HTML isn't a programming language like Python or C# because it doesn't handle logic or calculations. Instead, it is a <strong>markup language</strong>, meaning it uses special tags to flag text so a web browser knows whether to display it as a heading, a paragraph, a button, or an image.</p>
+            </section>
+
+            <section>
+                <h2>Understanding HTML Tags</h2>
+                <p>HTML relies completely on components called <strong>Elements</strong>, which are wrapped inside <strong>Tags</strong>. Tags use angle brackets (<code>&lt;</code> and <code>&gt;</code>) to tell the browser what to do.</p>
+                <p>Almost all tags come in pairs: an <strong>opening tag</strong> and a <strong>closing tag</strong>. The closing tag looks exactly like the opening tag but features a forward slash (<code>/</code>) right before the tag name.</p>
+                
+                <div class="important-note">
+                    <p style="margin: 0; color: var(--text-color);"><strong>Anatomy of a Tag:</strong></p>
+                    <p style="margin: 5px 0 0 0;"><code>&lt;p&gt;</code> This is how you open a paragraph. <code>&lt;/p&gt;</code> This is how you close it.</p>
+                </div>
+
+                <p>If you forget to close a tag, the browser will get confused and might accidentally apply that styling to the entire rest of your webpage!</p>
+            </section>
+
+            <section>
+                <h2>The Essential Page Structure</h2>
+                <p>Every single standard HTML document requires a specific structure to load correctly in web browsers. Here is the absolute template breakdown that every developer uses:</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Page Title Displayed on Tab&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;This is a Main Heading&lt;/h1&gt;
+    &lt;p&gt;This is where the text goes.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                <h3>What do these mean?</h3>
+                <ul>
+                    <li><code>&lt;!DOCTYPE html&gt;</code>: Tells the browser that this file is written in modern HTML5.</li>
+                    <li><code>&lt;html&gt;</code>: The root element that wraps absolutely everything on the page.</li>
+                    <li><code>&lt;head&gt;</code>: Contains background info that users don't see, like the page title or fonts.</li>
+                    <li><code>&lt;body&gt;</code>: Contains all visible text, pictures, buttons, and layouts that users actually interact with.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>The Most Important HTML Elements</h2>
+                <p>Once your body structural tag is set up, you can populate it using a variety of basic elements:</p>
+                
+                <ol>
+                    <li><strong>Headings:</strong> Ranging from <code>&lt;h1&gt;</code> (largest, most important) down to <code>&lt;h6&gt;</code> (smallest sub-heading).</li>
+                    <li><strong>Paragraphs:</strong> Handled with the <code>&lt;p&gt;</code> tag for regular readable body text block.</li>
+                    <li><strong>Links:</strong> Programmed via the anchor <code>&lt;a&gt;</code> tag. It requires an attribute called <code>href</code> to tell it where to point, like this: <br><code>&lt;a href="https://google.com"&gt;Visit Google&lt;/a&gt;</code></li>
+                    <li><strong>Lists:</strong> Use <code>&lt;ol&gt;</code> for numbered (ordered) lists, <code>&lt;ul&gt;</code> for bulleted (unordered) lists, and place <code>&lt;li&gt;</code> tags inside them for each item.</li>
+                </ol>
+            </section>
+
+            <div class="nav-buttons">
+                <a href="index.html" class="btn outline">← Return to Homepage 🏠</a>
+                <a href="pg2.html" class="btn">Go to Page 2 →</a>
+            </div>
+        </main>
+
+        <footer>
+            <address>Owned & Maintained by Antonio Biffarini</address>
+        </footer>
+
+    </div>
+
+</body>
+</html>

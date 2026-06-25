@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonio Biffarini | Learn Python Coding</title>
+    <style>
+        /* Consistent theme variables */
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --code-bg: #0f172a;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--card-bg);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--text-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #f8fafc;
+            margin-top: 20px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        ul, ol {
+            color: var(--text-muted);
+            padding-left: 20px;
+            font-size: 1.1rem;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        /* Styling for code snippets */
+        code {
+            background-color: var(--code-bg);
+            color: #f472b6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border: 1px solid #334155;
+            overflow-x: auto;
+        }
+
+        pre code {
+            color: #38bdf8;
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .important-note {
+            background-color: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 20px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            background-color: var(--accent-color);
+            color: #0f172a !important;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            text-decoration: none;
+        }
+
+        .btn.outline {
+            background-color: transparent;
+            color: var(--accent-color) !important;
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn.outline:hover {
+            background-color: var(--accent-color);
+            color: #0f172a !important;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--card-bg);
+            color: var(--text-muted);
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Antonio Biffarini</h1>
+            <p class="subtitle">Guide: How to Code in Python</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Introduction to Python</h2>
+                <p>Welcome to the Python guide! <strong>Python</strong> is a popular programming language known for its simplicity and readable style. It is used for web development, data analysis, automation, machine learning, and much more. Think of Python as a powerful tool that lets you tell a computer what to do using English-like commands.</p>
+
+                <p>Python is a true programming language because it can perform calculations, make decisions, and repeat actions automatically. It uses <strong>code</strong> instead of markup tags, making it a great choice for beginners and experienced developers alike.</p>
+            </section>
+
+            <section>
+                <h2>Basic Python Concepts</h2>
+                <p>Python code is executed from top to bottom. A Python program is made up of statements, expressions, and values. Here are some of the most important building blocks:</p>
+                <ul>
+                    <li><strong>Variables:</strong> Containers for storing values, such as text or numbers. Example: <code>name = "Antonio"</code>.</li>
+                    <li><strong>Data types:</strong> Common types include <code>str</code> for text, <code>int</code> for whole numbers, <code>float</code> for decimals, and <code>bool</code> for True/False values.</li>
+                    <li><strong>Functions:</strong> Named blocks of code that perform tasks. Example: <code>print()</code> shows text on the screen.</li>
+                    <li><strong>Comments:</strong> Notes for humans that Python ignores. Use <code>#</code> to start a comment.</li>
+                </ul>
+
+                <div class="important-note">
+                    <p style="margin: 0; color: var(--text-color);"><strong>Python is indentation-sensitive:</strong></p>
+                    <p style="margin: 5px 0 0 0;">Use consistent spacing or tabs to indent code blocks. Indentation tells Python what belongs together, such as the lines inside an <code>if</code> statement or a loop.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Writing Your First Python Program</h2>
+                <p>Here is a simple Python script that prints a greeting and performs a small calculation:</p>
+                <pre><code>name = "Antonio"
+print("Hello, " + name + "!")
+
+age = 20
+next_year = age + 1
+print("Next year you will be", next_year)</code></pre>
+
+                <h3>What is happening?</h3>
+                <ol>
+                    <li><code>name = "Antonio"</code>: Stores the text <code>"Antonio"</code> in a variable named <code>name</code>.</li>
+                    <li><code>print("Hello, " + name + "!")</code>: Joins the greeting text and the name, then displays it in the console.</li>
+                    <li><code>age = 20</code>: Stores the number <code>20</code> in a variable named <code>age</code>.</li>
+                    <li><code>next_year = age + 1</code>: Adds 1 to the age and stores the result in <code>next_year</code>.</li>
+                    <li><code>print("Next year you will be", next_year)</code>: Shows the result in the console.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>Python Control Flow</h2>
+                <p>Python can make decisions using <code>if</code> statements and repeat actions using loops.</p>
+                <pre><code>x = 5
+if x > 0:
+    print("x is positive")
+else:
+    print("x is zero or negative")
+
+for i in range(3):
+    print("Number", i)</code></pre>
+
+                <h3>How it works</h3>
+                <ul>
+                    <li><code>if x > 0:</code> checks whether the value of <code>x</code> is greater than zero.</li>
+                    <li>The indented lines below <code>if</code> or <code>else</code> only run when that branch is true.</li>
+                    <li><code>for i in range(3):</code> repeats the loop three times, using the values 0, 1, and 2.</li>
+                    <li>Loops are useful for repeating actions without writing the same code again.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Common Python Elements</h2>
+                <p>These are the most useful parts of Python to know first:</p>
+                <ol>
+                    <li><strong>Strings:</strong> Text inside quotes, such as <code>"Python"</code>. Strings can be joined or measured with <code>len()</code>.</li>
+                    <li><strong>Numbers:</strong> Whole numbers are <code>int</code>, decimals are <code>float</code>, and they can be used in math operations.</li>
+                    <li><strong>Lists:</strong> Ordered collections of values. Example: <code>[1, 2, 3]</code>. Use indexes like <code>my_list[0]</code> to get the first item.</li>
+                    <li><strong>Dictionaries:</strong> Collections of named values using keys. Example: <code>{"name": "Antonio", "age": 20}</code>. Use <code>person["name"]</code> to look up a value.</li>
+                </ol>
+            </section>
+
+            <div class="nav-buttons">
+                <a href="index.html" class="btn outline">← Return to Homepage 🏠</a>
+                <a href="Pythonguide2.html" class="btn">Go to Page 2 →</a>
+            </div>
+        </main>
+
+        <footer>
+            <address>Owned & Maintained by Antonio Biffarini</address>
+        </footer>
+
+    </div>
+
+</body>
+</html>
