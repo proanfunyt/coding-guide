@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Guide | Antonio Biffarini</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--card-bg);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--text-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            margin-top: 0;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            color: var(--text-muted);
+            padding-left: 20px;
+            font-size: 1.05rem;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        pre {
+            background-color: #0c1220;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border: 1px solid #334155;
+            overflow-x: auto;
+            color: #cbd5e1;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        code {
+            color: #38bdf8;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .note {
+            background-color: rgba(56, 189, 248, 0.08);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 15px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hidden Guide</h1>
+            <p class="subtitle">This page is only visible when opened directly by file path.</p>
+        </header>
+
+        <section>
+            <h2>What this page contains</h2>
+            <p>This hidden page follows the same dark theme and layout used by your HTML, Python, and CSS guides. It is intentionally not linked from the rest of the site, so it is only accessible if someone opens <code>HiddenGuide.html</code> directly.</p>
+            <p>The page uses the same structure: a header, content sections, code examples, and explanation notes. It also shows you exactly how the theme is built so you can write your own page.</p>
+        </section>
+
+        <section>
+            <h2>Page structure explained</h2>
+            <p>Every page has the same basic HTML structure. Use this as your starting template:</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Your Page Title&lt;/title&gt;
+    &lt;style&gt;...styles...&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        ...page content...
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            <p>Key HTML pieces:</p>
+            <ul>
+                <li><strong><code>&lt;!DOCTYPE html&gt;</code></strong>: Declares HTML5 so browsers render the page correctly.</li>
+                <li><strong><code>&lt;html lang="en"&gt;</code></strong>: Starts the HTML document and sets the language to English.</li>
+                <li><strong><code>&lt;head&gt;</code></strong>: Holds metadata such as the page title and internal CSS.</li>
+                <li><strong><code>&lt;style&gt;</code></strong>: Contains all of the page's CSS styling.</li>
+                <li><strong><code>&lt;body&gt;</code></strong>: Contains everything the visitor sees.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Theme and styles</h2>
+            <p>The theme is built with CSS variables and consistent card styling. Update the variables to change the entire look of your page without rewriting every rule.</p>
+            <pre><code>:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-color: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-color: #38bdf8;
+    --accent-hover: #7dd3fc;
+    --border-radius: 8px;
+}</code></pre>
+            <p>These variables are used in the main style rules for the body, cards, headings, buttons, and other elements. For a new page, keep this section and only change the values you want.</p>
+            <div class="note">
+                <p><strong>Tip:</strong> To use the same theme on a new page, copy the entire <code>:root</code> block and the CSS rules for <code>body</code>, <code>.container</code>, <code>section</code>, <code>h1</code>, <code>.subtitle</code>, and <code>.btn</code>.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Visible page sections</h2>
+            <p>Create content using multiple <code>&lt;section&gt;</code> blocks. Each section should have a title and a few paragraphs to explain the topic.</p>
+            <pre><code>&lt;section&gt;
+    &lt;h2&gt;Section Title&lt;/h2&gt;
+    &lt;p&gt;This is the explanation for the section.&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+            <p>If you want to show code examples, wrap the sample in <code>&lt;pre&gt;&lt;code&gt;</code> so the browser preserves spacing.</p>
+        </section>
+
+        <section>
+            <h2>How code blocks work</h2>
+            <p>The <code>&lt;pre&gt;</code> tag preserves the formatting of the code. The nested <code>&lt;code&gt;</code> tag gives the text the correct font and color. This is the best way to display code samples cleanly.</p>
+            <pre><code>&lt;pre&gt;&lt;code&gt;
+# example code
+print("Hello")
+&lt;/code&gt;&lt;/pre&gt;</code></pre>
+            <p>You can use the same CSS styling on new pages by copying the rules for <code>pre</code> and <code>code</code> from this page.</p>
+        </section>
+
+        <section>
+            <h2>Build your own page step-by-step</h2>
+            <p>Follow these steps to create a new page with the same dark theme:</p>
+            <ol>
+                <li>Copy the whole page from this file, including the <code>&lt;style&gt;</code> block.</li>
+                <li>Change the title inside <code>&lt;title&gt;</code> and the top heading inside <code>&lt;h1&gt;</code>.</li>
+                <li>Add new <code>&lt;section&gt;</code> boxes with your own headings and text.</li>
+                <li>If you want the page hidden, do not add links to it from other pages.</li>
+                <li>Save it with a new name like <code>MyNewGuide.html</code>.</li>
+            </ol>
+            <div class="note">
+                <p><strong>Important:</strong> No links from other pages means the page stays hidden.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Full Code Diagram</h2>
+            <p>The code below shows the entire <code>HiddenGuide.html</code> page with line-by-line notes about what each part does and which styles control color, fonts, spacing, and layout.</p>
+            <pre><code>&lt;!DOCTYPE html&gt;  <!-- HTML5 document type -->
+&lt;html lang="en"&gt;  <!-- Root element: page language is English -->
+&lt;head&gt;  <!-- Page metadata and styling start here -->
+    &lt;meta charset="UTF-8"&gt;  <!-- Character encoding for text -->
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;  <!-- Responsive layout for mobile -->
+    &lt;title&gt;Hidden Guide | Antonio Biffarini&lt;/title&gt;  <!-- Browser tab title -->
+    &lt;style&gt;  <!-- Internal CSS block starts -->
+        :root {  /* CSS variables used by all theme rules */
+            --bg-color: #0f172a;  /* page background color */
+            --card-bg: #1e293b;  /* card background color for sections */
+            --text-color: #f8fafc;  /* main text color */
+            --text-muted: #94a3b8;  /* secondary text color */
+            --accent-color: #38bdf8;  /* accent color for headings */
+            --accent-hover: #7dd3fc;  /* hover color for interactive items */
+            --border-radius: 8px;  /* rounded corners for cards */
+        }
+
+        body {  /* body font, background, and basic spacing */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  /* text font */
+            background-color: var(--bg-color);  /* dark page background */
+            color: var(--text-color);  /* light text color */
+            margin: 0;  /* remove default browser margin */
+            padding: 0;  /* remove default browser padding */
+        }
+
+        .container {  /* center content and limit page width */
+            max-width: 900px;  /* max width of the page */
+            margin: 40px auto;  /* vertical spacing and horizontal centering */
+            padding: 20px;  /* inner padding inside the page container */
+        }
+
+        header {  /* top heading section styling */
+            text-align: center;  /* center title text */
+            margin-bottom: 40px;  /* space below the header */
+            border-bottom: 2px solid var(--card-bg);  /* line under header */
+            padding-bottom: 20px;  /* padding below header title */
+        }
+
+        h1 {  /* main page title styling */
+            color: var(--text-color);  /* use the main text color */
+            font-size: 2.5rem;  /* large title size */
+            margin-bottom: 10px;  /* space below the title */
+        }
+
+        .subtitle {  /* subtitle styling under the main title */
+            color: var(--accent-color);  /* accent color for subtitle */
+            font-size: 1.1rem;  /* subtitle font size */
+            margin-top: 0;  /* remove default top margin */
+        }
+
+        section {  /* each content card style */
+            background-color: var(--card-bg);  /* dark card background */
+            padding: 25px;  /* space inside each card */
+            margin-bottom: 25px;  /* space between cards */
+            border-radius: var(--border-radius);  /* rounded corners */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);  /* subtle shadow */
+        }
+
+        h2 {  /* section heading style */
+            color: var(--accent-color);  /* accent color heading */
+            margin-top: 0;  /* remove top margin */
+            border-bottom: 1px solid #334155;  /* underline for headings */
+            padding-bottom: 8px;  /* space below heading text */
+        }
+
+        p {  /* paragraph text style */
+            color: var(--text-muted);  /* muted paragraph color */
+            font-size: 1.05rem;  /* paragraph font size */
+            line-height: 1.7;  /* line spacing for readability */
+            margin-bottom: 12px;  /* space below paragraphs */
+        }
+
+        ul {  /* list styling */
+            color: var(--text-muted);  /* muted list text color */
+            padding-left: 20px;  /* indent list items */
+            font-size: 1.05rem;  /* list font size */
+        }
+
+        li {  /* list item spacing */
+            margin-bottom: 10px;  /* gap between list items */
+        }
+
+        pre {  /* code block styling */
+            background-color: #0c1220;  /* dark code background */
+            padding: 20px;  /* spacing inside code block */
+            border-radius: var(--border-radius);  /* rounded code box */
+            border: 1px solid #334155;  /* code block border */
+            overflow-x: auto;  /* horizontal scroll if needed */
+            color: #cbd5e1;  /* text color inside code block */
+            font-family: 'Courier New', Courier, monospace;  /* monospaced code font */
+            font-size: 0.95rem;  /* code font size */
+            line-height: 1.5;  /* code line spacing */
+        }
+
+        code {  /* inline code styling */
+            color: #38bdf8;  /* light blue code text color */
+            font-family: 'Courier New', Courier, monospace;  /* monospaced font for code */
+        }
+
+        .note {  /* note panel styling */
+            background-color: rgba(56, 189, 248, 0.08);  /* pale blue background */
+            border-left: 4px solid var(--accent-color);  /* accent left border */
+            padding: 15px;  /* inner padding */
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;  /* rounded right corners */
+            margin: 15px 0;  /* vertical spacing */
+        }
+
+        footer {  /* footer text style */
+            text-align: center;  /* center text */
+            padding: 20px;  /* footer spacing */
+            color: var(--text-muted);  /* muted footer text */
+            font-size: 0.95rem;  /* slightly smaller font */
+        }
+    &lt;/style&gt;  <!-- end of CSS block -->
+&lt;/head&gt;
+&lt;body&gt;  <!-- visible page content begins -->
+    &lt;div class="container"&gt;  <!-- wrapper that centers content and restricts width -->
+        &lt;header&gt;  <!-- header section with title and subtitle -->
+            &lt;h1&gt;Hidden Guide&lt;/h1&gt;  <!-- main page title -->
+            &lt;p class="subtitle"&gt;This page is only visible when opened directly by file path.&lt;/p&gt;  <!-- subtitle uses accent color -->
+        &lt;/header&gt;
+
+        &lt;section&gt;  <!-- first content card -->
+            &lt;h2&gt;What this page contains&lt;/h2&gt;  <!-- section title uses accent color -->
+            &lt;p&gt;This page is like a hidden instruction manual for your guide style. It uses the same colors and boxes as the other pages, but it is not linked anywhere else.&lt;/p&gt;
+            &lt;p&gt;You only find it if you open &lt;code&gt;HiddenGuide.html&lt;/code&gt; directly. It also shows you how to make a new page that looks the same.&lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;section&gt;  <!-- second content card explaining page structure -->
+            &lt;h2&gt;Page structure explained&lt;/h2&gt;
+            &lt;p&gt;Every page uses the same layout, like a simple recipe. Copy this, then add your own content.&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Your Page Title&lt;/title&gt;
+    &lt;style&gt;...styles...&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        ...page content...
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;Here is what each part means:&lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;strong&gt;&lt;code&gt;&lt;!DOCTYPE html&gt;&lt;/code&gt;&lt;/strong&gt;: tells the browser to use modern HTML.&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;&lt;code&gt;&lt;html lang="en"&gt;&lt;/code&gt;&lt;/strong&gt;: starts the page and sets the language.&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;&lt;code&gt;&lt;head&gt;&lt;/code&gt;&lt;/strong&gt;: holds the page title and styles.&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;&lt;code&gt;&lt;style&gt;&lt;/code&gt;&lt;/strong&gt;: contains the look and feel rules.&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;&lt;code&gt;&lt;body&gt;&lt;/code&gt;&lt;/strong&gt;: is the visible page content.&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/section&gt;
+
+        &lt;section&gt;  <!-- theme explanation -->
+            &lt;h2&gt;Theme and styles&lt;/h2&gt;
+            &lt;p&gt;This page uses CSS variables for the main colors and card shapes. Change these values to update the whole look quickly.&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-color: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-color: #38bdf8;
+    --accent-hover: #7dd3fc;
+    --border-radius: 8px;
+}
+&lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;These values control the background, cards, headings, and text style. Change them to give your page a new color scheme.&lt;/p&gt;
+            &lt;div class="note"&gt;
+                &lt;p&gt;&lt;strong&gt;Tip:&lt;/strong&gt; Copy the whole &lt;code&gt;:root&lt;/code&gt; block plus the CSS rules for &lt;code&gt;body&lt;/code&gt;, &lt;code&gt;.container&lt;/code&gt;, &lt;code&gt;section&lt;/code&gt;, &lt;code&gt;h1&lt;/code&gt;, and &lt;code&gt;.subtitle&lt;/code&gt; to reuse the same style.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section&gt;  <!-- page content section instructions -->
+            &lt;h2&gt;Visible page sections&lt;/h2&gt;
+            &lt;p&gt;Each idea belongs inside a <code>&lt;section&gt;</code> box. This makes the page easier to read.&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;&lt;section&gt;
+    &lt;h2&gt;Section Title&lt;/h2&gt;
+    &lt;p&gt;This is the explanation for the section.&lt;/p&gt;
+&lt;/section&gt;
+&lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;To show code examples, put them inside <code>&lt;pre&gt;&lt;code&gt;</code>. This keeps the spacing correct.&lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;section&gt;  <!-- code block usage explanation -->
+            &lt;h2&gt;How code blocks work&lt;/h2&gt;
+            &lt;p&gt;The browser keeps code exactly the same when it is inside <code>&lt;pre&gt;</code>. The <code>&lt;code&gt;</code> tag makes the text look like code.&lt;/p&gt;
+            &lt;pre&gt;&lt;code&gt;&lt;pre&gt;&lt;code&gt;
+# example code
+print("Hello")
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;
+            &lt;p&gt;Copy the <code>pre</code> and <code>code</code> CSS rules from this page to make code examples look the same on a new guide.&lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;section&gt;  <!-- step-by-step page build instructions -->
+            &lt;h2&gt;Build your own page step-by-step&lt;/h2&gt;
+            &lt;p&gt;Use this process when creating a new page with the same theme:&lt;/p&gt;
+            &lt;ol&gt;
+                &lt;li&gt;Copy the full HTML template from this page, including the &lt;code&gt;&lt;style&gt;&lt;/code&gt; block.&lt;/li&gt;
+                &lt;li&gt;Change the page title inside &lt;code&gt;&lt;title&gt;&lt;/code&gt; and the header text inside &lt;code&gt;&lt;h1&gt;&lt;/code&gt;.&lt;/li&gt;
+                &lt;li&gt;Add your own &lt;code&gt;&lt;section&gt;&lt;/code&gt; blocks with new headings and paragraphs.&lt;/li&gt;
+                &lt;li&gt;Use the existing button styles and classes for actions, or leave them out if the page should remain hidden.&lt;/li&gt;
+                &lt;li&gt;Save the file with a new name like &lt;code&gt;MyNewGuide.html&lt;/code&gt;.&lt;/li&gt;
+            &lt;/ol&gt;
+            &lt;div class="note"&gt;
+                &lt;p&gt;&lt;strong&gt;Important:&lt;/strong&gt; If you do not want the page linked from the main site, do not add any anchor tags (&lt;code&gt;&lt;a href="..."&gt;&lt;/code&gt;) from existing pages.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section&gt;  <!-- hidden page behavior explanation -->
+            &lt;h2&gt;How the hidden page works&lt;/h2&gt;
+            &lt;p&gt;This page is built exactly like the other guide pages, but it has no navigation links from the main site. That means the only way to open it is by entering the file name in the browser or using a direct file link.&lt;/p&gt;
+            &lt;p&gt;If you want to keep your own new page hidden, do not add any links to &lt;code&gt;index.html&lt;/code&gt;, &lt;code&gt;CSSGuide1.html&lt;/code&gt;, or the guide navigation menus.&lt;/p&gt;
+        &lt;/section&gt;
+
+        &lt;footer&gt;  <!-- footer text as the final page note -->
+            &lt;p&gt;Owned &amp; Maintained by Antonio Biffarini&lt;/p&gt;
+        &lt;/footer&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <footer>
+            <p>Owned &amp; Maintained by Antonio Biffarini</p>
+        </footer>
+    </div>
+</body>
+</html>
