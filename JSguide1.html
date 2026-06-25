@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proanfun | Learn JavaScript Coding</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --code-bg: #0f172a;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--card-bg);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--text-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #f8fafc;
+            margin-top: 20px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        ul, ol {
+            color: var(--text-muted);
+            padding-left: 20px;
+            font-size: 1.1rem;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        code {
+            background-color: var(--code-bg);
+            color: #f472b6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border: 1px solid #334155;
+            overflow-x: auto;
+        }
+
+        pre code {
+            color: #38bdf8;
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .important-note {
+            background-color: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 20px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            background-color: var(--accent-color);
+            color: #0f172a !important;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            text-decoration: none;
+        }
+
+        .btn.outline {
+            background-color: transparent;
+            color: var(--accent-color) !important;
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn.outline:hover {
+            background-color: var(--accent-color);
+            color: #0f172a !important;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--card-bg);
+            color: var(--text-muted);
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Proanfun</h1>
+            <p class="subtitle">Guide: How to Code in JavaScript</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>Introduction to JavaScript</h2>
+                <p>JavaScript is the programming language that makes web pages interactive. While HTML gives structure and CSS adds style, JavaScript allows a page to respond to clicks, update content, and make things happen automatically.</p>
+                <p>JavaScript runs in the browser and is used for games, forms, animations, and web applications. It is a powerful language that works well for beginners because it can show results immediately in the browser.</p>
+            </section>
+
+            <section>
+                <h2>Variables and Data Types</h2>
+                <p>Variables store values that your program can use later. JavaScript supports different data types like text, numbers, and true/false values.</p>
+                <pre><code>let name = "Proanfun";
+const age = 20;
+let isStudent = true;
+let total = 5 + 3;</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>let</code> creates a value that can change later.</li>
+                    <li><code>const</code> creates a value that cannot be reassigned.</li>
+                    <li><code>"Proanfun"</code> is a string, <code>20</code> is a number, and <code>true</code> is a boolean.</li>
+                    <li>JavaScript can do math, store text, and remember values in variables.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Functions and Expressions</h2>
+                <p>Functions are reusable blocks of code. You define a function once and call it whenever you need the same work done again.</p>
+                <pre><code>function greet(name) {
+    console.log("Hello, " + name + "!");
+}
+
+greet("Proanfun");</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>function greet(name)</code> defines a function named <code>greet</code> with a parameter.</li>
+                    <li><code>console.log()</code> shows text in the browser console.</li>
+                    <li><code>greet("Proanfun")</code> runs the function and passes in the value <code>"Proanfun"</code>.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Control Flow</h2>
+                <p>Control flow decides which code runs when. JavaScript uses <code>if</code> statements and loops to make choices and repeat actions.</p>
+                <pre><code>let score = 8;
+if (score >= 5) {
+    console.log("You passed!");
+} else {
+    console.log("Try again.");
+}
+
+for (let i = 0; i < 3; i++) {
+    console.log("Step", i + 1);
+}</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>if (score >= 5)</code> checks whether the score is high enough.</li>
+                    <li>Code inside the curly braces runs only when the condition is true.</li>
+                    <li><code>for</code> loops repeat code multiple times using a counter.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Arrays and Objects</h2>
+                <p>Arrays store ordered lists of values, and objects store named values. They're both essential for organizing data in JavaScript.</p>
+                <pre><code>let colors = ["red", "green", "blue"];
+console.log(colors[0]);
+
+let user = {
+    name: "Proanfun",
+    age: 20,
+    active: true
+};
+console.log(user.name);</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>["red", "green", "blue"]</code> creates an array with three items.</li>
+                    <li><code>colors[0]</code> retrieves the first item.</li>
+                    <li>An object uses keys like <code>name</code> to store values.</li>
+                    <li><code>user.name</code> looks up the value for that key.</li>
+                </ul>
+            </section>
+
+            <div class="nav-buttons">
+                <a href="index.html" class="btn outline">← Return to Homepage 🏠</a>
+                <a href="JSguide2.html" class="btn">Go to Page 2 →</a>
+            </div>
+        </main>
+
+        <footer>
+            <address>Owned & Maintained by Proanfun</address>
+        </footer>
+    </div>
+
+</body>
+</html>

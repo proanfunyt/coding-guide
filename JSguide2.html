@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proanfun | JavaScript Guide Page 2</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-color: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent-color: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --code-bg: #0f172a;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid var(--card-bg);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: var(--text-color);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            margin-top: 0;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #f8fafc;
+            margin-top: 20px;
+        }
+
+        p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        ul, ol {
+            color: var(--text-muted);
+            padding-left: 20px;
+            font-size: 1.1rem;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        code {
+            background-color: var(--code-bg);
+            color: #f472b6;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95rem;
+        }
+
+        pre {
+            background-color: var(--code-bg);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border: 1px solid #334155;
+            overflow-x: auto;
+        }
+
+        pre code {
+            color: #38bdf8;
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .important-note {
+            background-color: rgba(56, 189, 248, 0.1);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 20px 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            background-color: var(--accent-color);
+            color: #0f172a !important;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            text-decoration: none;
+        }
+
+        .btn.outline {
+            background-color: transparent;
+            color: var(--accent-color) !important;
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn.outline:hover {
+            background-color: var(--accent-color);
+            color: #0f172a !important;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--card-bg);
+            color: var(--text-muted);
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <h1>Proanfun</h1>
+            <p class="subtitle">Guide: How to Code in JavaScript</p>
+        </header>
+
+        <main>
+            <section>
+                <h2>JavaScript in the Browser</h2>
+                <p>JavaScript is commonly used inside web pages to change content, respond to user input, and update the page without reloading. The browser provides tools like <code>document</code> and <code>window</code> to let your code interact with the page.</p>
+                <pre><code>console.log("JavaScript is running!");
+console.log(document.title);</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>console.log()</code> prints messages to the browser console.</li>
+                    <li><code>document.title</code> reads the current page title.</li>
+                    <li>The browser executes JavaScript while the page is open.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Events and Interaction</h2>
+                <p>Events occur when a user clicks a button, types text, or moves the mouse. JavaScript responds to these events with event listeners.</p>
+                <pre><code>const button = document.querySelector("button");
+button.addEventListener("click", function() {
+    console.log("Button clicked!");
+});</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>querySelector()</code> finds an element on the page.</li>
+                    <li><code>addEventListener()</code> listens for an action like a click.</li>
+                    <li>The function inside runs when the event happens.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>DOM Manipulation Basics</h2>
+                <p>The DOM is the browser's representation of the page. JavaScript can read and change DOM elements to update text, styles, and structure.</p>
+                <pre><code>const title = document.querySelector("h1");
+title.textContent = "Hello from JavaScript!";
+
+document.body.style.backgroundColor = "#0f172a";</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>textContent</code> updates visible text on the page.</li>
+                    <li><code>style.backgroundColor</code> changes an element's style.</li>
+                    <li>JavaScript can modify the page after it has loaded.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Array Methods</h2>
+                <p>JavaScript arrays have built-in methods for common tasks such as looping, filtering, and transforming values.</p>
+                <pre><code>const numbers = [1, 2, 3, 4];
+const squared = numbers.map(function(n) {
+    return n * n;
+});
+const evens = numbers.filter(function(n) {
+    return n % 2 === 0;
+});
+console.log(squared);
+console.log(evens);</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>map()</code> creates a new array by changing each item.</li>
+                    <li><code>filter()</code> creates a new array with only the items that match a condition.</li>
+                    <li>These methods keep code shorter and easier to read.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Debugging with the Console</h2>
+                <p>The browser console helps you see errors and inspect values while your code runs. It is one of the best tools for learning and troubleshooting JavaScript.</p>
+                <pre><code>const greeting = "Hello";
+console.log(greeting);
+console.error("This is an error message.");
+console.table([{ name: "JS", level: "easy" }]);</code></pre>
+                <p>How it works:</p>
+                <ul>
+                    <li><code>console.log()</code> shows normal messages.</li>
+                    <li><code>console.error()</code> shows errors and makes them easier to spot.</li>
+                    <li><code>console.table()</code> displays arrays or objects in a table layout.</li>
+                </ul>
+            </section>
+
+            <div class="nav-buttons">
+                <a href="JSguide1.html" class="btn outline">← Back to Page 1</a>
+                <a href="JSguide3.html" class="btn">Go to Page 3 →</a>
+            </div>
+        </main>
+
+        <footer>
+            <address>Owned & Maintained by Proanfun</address>
+        </footer>
+    </div>
+
+</body>
+</html>
